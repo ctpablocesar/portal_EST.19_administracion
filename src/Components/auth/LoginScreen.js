@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Login = () => {
+export const LoginScreen = () => {
     return (
         <div>
             <h1>Administración Portal EST 19</h1>

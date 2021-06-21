@@ -1,0 +1,73 @@
+.footer {
+  background-color: #619f61;
+  position: relative;
+  width: 100%;
+  height: auto;
+  color: white;
+  text-align: center;
+  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-text {
+  color: #292811;
+}
+
+.titulos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Navbar*/
+
+.navbar2 {
+  background-color: #619f61;
+}
+
+.logoimg {
+  border-radius: 50%;
+}
+
+.icono-x {
+  font-size: 2rem;
+}
+
+.navbar-toggler {
+  background-color: #68a468;
+  border: 3px solid #292811;
+}
+
+.logotext{
+  color: white;
+  text-shadow: -.5px -.5px .5px #000, .5px .5px .5px #000, -.5px .5px .5px #000, .5px -.5px .5px #000;
+}
+
+.alinearlinks{
+text-align: center;
+align-items: center;
+justify-content: center;
+margin-left: auto;
+
+}
+
+/*Noticias*/
+
+.edicion{
+  width: 100%;
+  margin-top: 1rem;
+  border-top: 1px solid gray;
+}
+
+.colores {
+  background-color: #292811;
+  background-color: #58521a;
+  background-color: #a98c5f;
+  background-color: #f5f4f2;
+  background-color: #619f61;
+  background-color: #b28c66;
+  background-color: #68a468;
+  background-color: #5a9759;
+}

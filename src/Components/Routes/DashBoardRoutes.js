@@ -17,7 +17,7 @@ export const DashBoardRoutes = () => {
                 <Navbar />
             </header>
             <article className="content">
-                <Noticias/>
+                <Anuncios />
             </article>
             <footer className="main-footer">
                 <Footer />

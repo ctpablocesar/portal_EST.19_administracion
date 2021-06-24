@@ -14,7 +14,7 @@
   color: #292811;
 }
 
-.titulos{
+.titulos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +31,14 @@
   border-radius: 50%;
 }
 
+.dropdown-item:active {
+  background-color: green;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+}
+
 .icono-x {
   font-size: 2rem;
 }
@@ -40,25 +48,78 @@
   border: 3px solid #292811;
 }
 
-.logotext{
+.logotext {
   color: white;
   text-shadow: -.5px -.5px .5px #000, .5px .5px .5px #000, -.5px .5px .5px #000, .5px -.5px .5px #000;
 }
 
-.alinearlinks{
-text-align: center;
-align-items: center;
-justify-content: center;
-margin-left: auto;
-
+.alinearlinks {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
 }
 
 /*Noticias*/
 
-.edicion{
+.edicion {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-evenly;
   width: 100%;
   margin-top: 1rem;
   border-top: 1px solid gray;
+  font-size: 1.2rem;
+}
+
+.eliminar {
+  margin-left: 2px;
+  color: red;
+}
+
+.editar {
+  margin-left: 2px;
+  color: green;
+}
+
+/*Secciones*/
+
+.seccion {
+  font-family: Arial Black;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  font-weight: bold;
+  font-size: 45px;
+  color: #5a9759;
+  text-transform: uppercase;
+  text-shadow: -.5px -.5px .5px darkgreen, .5px .5px .5px darkgreen, -.5px .5px .5px darkgreen, .5px -.5px .5px darkgreen;
+}
+
+/*Noticias*/
+
+.btn-add {
+  color: green;
+  border: .2rem solid green;
+  font-weight: 600;
+  background-color: #bddabd;
+  text-decoration: none;
+}
+
+.disabled {
+  resize: none;
+}
+
+.tarjeta-noticias{
+  margin-bottom: 2rem;
+}
+
+
+@media (max-width:820px) {
+  .centrar {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .colores {

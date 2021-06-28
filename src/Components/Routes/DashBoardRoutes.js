@@ -3,12 +3,13 @@ import React from 'react'
 import { Navbar } from '../Ui/Navbar';
 // import { Sidebar } from '../Ui/Sidebar';
 import { Footer } from '../Ui/Footer';
-import { Anuncios } from '../Secciones/Anuncios';
+// import { Anuncios } from '../Secciones/Anuncios';
 // import { CalendarioEscolar } from '../Secciones/CalendarioEscolar';
 // import { FraseInicio } from '../Secciones/FraseInicio';
-// import { Galeria } from '../Secciones/Galeria';
-import { Noticias } from '../Secciones/Noticias';
+import { Galeria } from '../Secciones/Galeria';
+// import { Noticias } from '../Secciones/Noticias';
 import '../../styles/dasboard.css'
+import { Contacto } from '../Secciones/Contacto';
 
 export const DashBoardRoutes = () => {
     return (
@@ -17,7 +18,7 @@ export const DashBoardRoutes = () => {
                 <Navbar />
             </header>
             <article className="content">
-                <Anuncios />
+                <Contacto />
             </article>
             <footer className="main-footer">
                 <Footer />

@@ -35,6 +35,7 @@ export const Navbar = () => {
                                     <a className="dropdown-item waves-effect waves-light" href="#">Noticias</a>
                                     <a className="dropdown-item waves-effect waves-light" href="#">Frase Inicio</a>
                                     <a className="dropdown-item waves-effect waves-light" href="#">Galería</a>
+                                    <a className="dropdown-item waves-effect waves-light" href="#">Contacto</a>
                                 </div>
                             </li>
                         </ul>

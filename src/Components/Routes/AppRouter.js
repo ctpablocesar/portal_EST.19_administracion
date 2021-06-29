@@ -10,7 +10,7 @@ import { PrivateRoute } from './PrivateRoute'
 import { LoginScreen } from '../auth/LoginScreen'
 
 export const AppRouter = () => {
-    const isAuthenticated = true;
+    const isAuthenticated = false;
     return (  
         <Router>
             <main>

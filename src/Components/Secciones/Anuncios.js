@@ -4,7 +4,7 @@ import "rc-switch/assets/index.css";
 import { images } from '../../Resources/resources';
 
 export const Anuncios = () => {
-
+    console.log("Anuncios")
     const onChange = () => {
 
     }

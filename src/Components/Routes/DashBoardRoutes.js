@@ -1,24 +1,46 @@
 import React from 'react'
-// import { Redirect, Route, Switch } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { Navbar } from '../Ui/Navbar';
-// import { Sidebar } from '../Ui/Sidebar';
 import { Footer } from '../Ui/Footer';
-// import { Anuncios } from '../Secciones/Anuncios';
-// import { CalendarioEscolar } from '../Secciones/CalendarioEscolar';
-// import { FraseInicio } from '../Secciones/FraseInicio';
+import { Anuncios } from '../Secciones/Anuncios';
+import { CalendarioEscolar } from '../Secciones/CalendarioEscolar';
+import { FraseInicio } from '../Secciones/FraseInicio';
 import { Galeria } from '../Secciones/Galeria';
-// import { Noticias } from '../Secciones/Noticias';
-import '../../styles/dasboard.css'
+import { Noticias } from '../Secciones/Noticias';
 import { Contacto } from '../Secciones/Contacto';
+import '../../styles/dasboard.css'
 
-export const DashBoardRoutes = () => {
+export const DashBoardRoutes = ({ history }) => {
+    console.log(history)
+
     return (
+        // <>
+        //     <Navbar />
+        //     <Switch>
+        //         <Route path="/admin/calendario" component={CalendarioEscolar} />
+        //         <Route path="/admin/frase" component={FraseInicio} />
+        //         <Route path="/admin/galeria" component={Galeria} />
+        //         <Route path="/admin/noticias" component={Noticias} />
+        //         <Route path="/admin/contacto" component={Contacto} />
+        //         <Route exact path="/admin/anuncios" component={Anuncios} />
+        //         <Redirect to="/admin/anuncios" />
+        //     </Switch>
+        //     <Footer/>
+        // </>
         <div className="wrapper">
             <header className="main-head">
                 <Navbar />
             </header>
             <article className="content">
-                <Contacto />
+                <Switch>
+                    <Route path="/admin/calendario" component={CalendarioEscolar} />
+                    <Route path="/admin/frase" component={FraseInicio} />
+                    <Route path="/admin/galeria" component={Galeria} />
+                    <Route path="/admin/noticias" component={Noticias} />
+                    <Route path="/admin/contacto" component={Contacto} />
+                    <Route exact path="/admin/anuncios" component={Anuncios} />
+                    <Redirect to="/admin/anuncios" />
+                </Switch >
             </article>
             <footer className="main-footer">
                 <Footer />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { images } from '../../Resources/resources';
 import '../../styles/administracion.css';
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 
@@ -30,12 +31,12 @@ export const Navbar = () => {
                                 <span className="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secciones
                                 </span>
                                 <div className="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-3">
-                                    <a className="dropdown-item waves-effect waves-light" href="#">Anuncios</a>
-                                    <a className="dropdown-item waves-effect waves-light" href="#">Calendario Escolar</a>
-                                    <a className="dropdown-item waves-effect waves-light" href="#">Noticias</a>
-                                    <a className="dropdown-item waves-effect waves-light" href="#">Frase Inicio</a>
-                                    <a className="dropdown-item waves-effect waves-light" href="#">Galería</a>
-                                    <a className="dropdown-item waves-effect waves-light" href="#">Contacto</a>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/calendario'>CalendarioEscolar</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/frase'>FraseInicio</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/galeria'>Galeria</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/noticias'>Noticias</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/contacto'>Contacto</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/anuncios'>Anuncios</Link>
                                 </div>
                             </li>
                         </ul>

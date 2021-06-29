@@ -13,7 +13,7 @@ export const PublicRoute = ({
         <Route {...rest}
             component={(props) => (
                 (isAuthenticated)
-                    ? (<Redirect to="/" />)
+                    ? (<Redirect to="/admin" />)
                     : (<Component {...props} />)
             )}
 
@@ -22,6 +22,6 @@ export const PublicRoute = ({
 }
 
 PublicRoute.propTypes = {
-    // isAuthenticated: PropTypes.bool.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
     component: PropTypes.func.isRequired
 }

@@ -1,17 +1,31 @@
 import React from 'react'
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
 import { DashBoardRoutes } from './DashBoardRoutes';
+import { PublicRoute } from './PublicRoute'
+import { PrivateRoute } from './PrivateRoute'
+import { LoginScreen } from '../auth/LoginScreen'
 
 export const AppRouter = () => {
-    return (
+    const isAuthenticated = true;
+    return (  
         <Router>
             <main>
                 <Switch>
-                    <Route path="/" component={DashBoardRoutes} />
+                    <PublicRoute
+                        path="/"
+                        exact
+                        isAuthenticated={isAuthenticated}
+                        component={LoginScreen}
+                        />
+                    <PrivateRoute
+                        path="/admin"
+                        isAuthenticated={isAuthenticated}
+                        component={DashBoardRoutes}
+                    />
                 </Switch>
             </main>
         </Router>

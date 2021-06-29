@@ -6,6 +6,7 @@ import '../../styles/administracion.css'
 
 export const Noticias = () => {
 
+    console.log('nada')
     const onChange = () => {
         console.log('nada')
     }

@@ -64,7 +64,7 @@ export const Noticias = () => {
 
 
 
-                <div className="card tarjeta-noticias">
+                   <div className="card tarjeta-noticias">
                     <div className="row p-4">
                         <div className="col-md-4">
                             <img src={images.maquinas} className="w-100" alt="imagen de la noticia" />
@@ -77,164 +77,24 @@ export const Noticias = () => {
                             </div>
                         </div>
                         <div className='col-md-12 edicion'>
-                            <div className="centrar">
+                            <div className="centrar divstatus">
                                 Status
                                 <Switch
                                     onChange={onChange}
                                     onClick={onChange}
                                 />
                             </div>
-                            <div className="centrar">
+                            <div className="centrar diveditar">
                                 Editar
                                 <i className="fas fa-edit editar"></i>
                             </div>
-                            <div className="centrar">
+                            <div className="centrar diveliminar">
                                 Eliminar
                                 <i className="fas fa-trash-alt eliminar"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-                <div className="card tarjeta-noticias">
-                    <div className="row p-4">
-                        <div className="col-md-4">
-                            <img src={images.maquinas} className="w-100" alt="imagen de la noticia" />
-                        </div>
-                        <div className="col-md-8 px-3">
-                            <div className="card-block px-3">
-                                <h4 className="card-title">Título de la noticia</h4>
-                                <p className="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae iure ut corporis accusamus beatae? Perspiciatis blanditiis aliquam repellat ipsum eaque nihil perferendis vitae quas, autem deleniti maiores accusantium eveniet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, minus quae. Quibusdam distinctio mollitia qui, temporibus delectus non atque error reprehenderit, explicabo dolores beatae consequuntur hic ea labore quae reiciendis? lorem </p>
-                                <p className="card-text text-right"><small className="text-muted">Última actualización hace 3 min</small></p>
-                            </div>
-                        </div>
-                        <div className='col-md-12 edicion'>
-                            <div className="centrar">
-                                Status
-                                <Switch
-                                    onChange={onChange}
-                                    onClick={onChange}
-                                />
-                            </div>
-                            <div className="centrar">
-                                Editar
-                                <i className="fas fa-edit editar"></i>
-                            </div>
-                            <div className="centrar">
-                                Eliminar
-                                <i className="fas fa-trash-alt eliminar"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className="card tarjeta-noticias">
-                    <div className="row p-4">
-                        <div className="col-md-4">
-                            <img src={images.maquinas} className="w-100" alt="imagen de la noticia" />
-                        </div>
-                        <div className="col-md-8 px-3">
-                            <div className="card-block px-3">
-                                <h4 className="card-title">Título de la noticia</h4>
-                                <p className="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae iure ut corporis accusamus beatae? Perspiciatis blanditiis aliquam repellat ipsum eaque nihil perferendis vitae quas, autem deleniti maiores accusantium eveniet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, minus quae. Quibusdam distinctio mollitia qui, temporibus delectus non atque error reprehenderit, explicabo dolores beatae consequuntur hic ea labore quae reiciendis? lorem </p>
-                                <p className="card-text text-right"><small className="text-muted">Última actualización hace 3 min</small></p>
-                            </div>
-                        </div>
-                        <div className='col-md-12 edicion'>
-                            <div className="centrar">
-                                Status
-                                <Switch
-                                    onChange={onChange}
-                                    onClick={onChange}
-                                />
-                            </div>
-                            <div className="centrar">
-                                Editar
-                                <i className="fas fa-edit editar"></i>
-                            </div>
-                            <div className="centrar">
-                                Eliminar
-                                <i className="fas fa-trash-alt eliminar"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div className="card tarjeta-noticias">
-                    <div className="row p-4">
-                        <div className="col-md-4">
-                            <img src={images.maquinas} className="w-100" alt="imagen de la noticia" />
-                        </div>
-                        <div className="col-md-8 px-3">
-                            <div className="card-block px-3">
-                                <h4 className="card-title">Título de la noticia</h4>
-                                <p className="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae iure ut corporis accusamus beatae? Perspiciatis blanditiis aliquam repellat ipsum eaque nihil perferendis vitae quas, autem deleniti maiores accusantium eveniet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, minus quae. Quibusdam distinctio mollitia qui, temporibus delectus non atque error reprehenderit, explicabo dolores beatae consequuntur hic ea labore quae reiciendis? lorem </p>
-                                <p className="card-text text-right"><small className="text-muted">Última actualización hace 3 min</small></p>
-                            </div>
-                        </div>
-                        <div className='col-md-12 edicion'>
-                            <div className="centrar">
-                                Status
-                                <Switch
-                                    onChange={onChange}
-                                    onClick={onChange}
-                                />
-                            </div>
-                            <div className="centrar">
-                                Editar
-                                <i className="fas fa-edit editar"></i>
-                            </div>
-                            <div className="centrar">
-                                Eliminar
-                                <i className="fas fa-trash-alt eliminar"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div className="card tarjeta-noticias">
-                    <div className="row p-4">
-                        <div className="col-md-4">
-                            <img src={images.maquinas} className="w-100" alt="imagen de la noticia" />
-                        </div>
-                        <div className="col-md-8 px-3">
-                            <div className="card-block px-3">
-                                <h4 className="card-title">Título de la noticia</h4>
-                                <p className="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae iure ut corporis accusamus beatae? Perspiciatis blanditiis aliquam repellat ipsum eaque nihil perferendis vitae quas, autem deleniti maiores accusantium eveniet eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. In, minus quae. Quibusdam distinctio mollitia qui, temporibus delectus non atque error reprehenderit, explicabo dolores beatae consequuntur hic ea labore quae reiciendis? lorem </p>
-                                <p className="card-text text-right"><small className="text-muted">Última actualización hace 3 min</small></p>
-                            </div>
-                        </div>
-                        <div className='col-md-12 edicion'>
-                            <div className="centrar">
-                                Status
-                                <Switch
-                                    onChange={onChange}
-                                    onClick={onChange}
-                                />
-                            </div>
-                            <div className="centrar">
-                                Editar
-                                <i className="fas fa-edit editar"></i>
-                            </div>
-                            <div className="centrar">
-                                Eliminar
-                                <i className="fas fa-trash-alt eliminar"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
         </div>

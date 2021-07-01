@@ -65,39 +65,18 @@ export const Galeria = () => {
 
                         <div className="row d-flex justify-content-center">
                             <div className="card col-md-3 imagen-galeria" style={{ width: '18rem' }}>
-                                <img className="card-img-top mt-3" src={images.maquinas} alt="Card image cap" />
+                                <img className="card-img-top mt-3" src={images.maquinas} alt="titulo de la imagen" />
                                 <div className="card-body">
                                     <h5 class="text-center card-title">Título de la imagen</h5>
                                     <div className="flexd">
-                                        <div className="centrar">
+                                        <div className="centrar divstatus">
                                             Status
                                             <Switch
                                                 onChange={onChange}
                                                 onClick={onChange}
                                             />
                                         </div>
-                                        <div className="centrar">
-                                            Eliminar
-                                            <i className="fas fa-trash-alt eliminar"></i>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="card col-md-3 imagen-galeria" style={{ width: '18rem' }}>
-                                <img className="card-img-top mt-3" src={images.maquinas} alt="Card image cap" />
-                                <div className="card-body">
-                                    <h5 class="text-center card-title">Título de la imagen</h5>
-                                    <div className="flexd">
-                                        <div className="centrar">
-                                            Status
-                                            <Switch
-                                                onChange={onChange}
-                                                onClick={onChange}
-                                            />
-                                        </div>
-                                        <div className="centrar">
+                                        <div className="centrar text-center diveliminar">
                                             Eliminar
                                             <i className="fas fa-trash-alt eliminar"></i>
                                         </div>
@@ -107,68 +86,6 @@ export const Galeria = () => {
                             </div>
 
 
-                            <div className="card col-md-3 imagen-galeria" style={{ width: '18rem' }}>
-                                <img className="card-img-top mt-3" src={images.maquinas} alt="Card image cap" />
-                                <div className="card-body">
-                                    <h5 class="text-center card-title">Título de la imagen</h5>
-                                    <div className="flexd">
-                                        <div className="centrar">
-                                            Status
-                                            <Switch
-                                                onChange={onChange}
-                                                onClick={onChange}
-                                            />
-                                        </div>
-                                        <div className="centrar">
-                                            Eliminar
-                                            <i className="fas fa-trash-alt eliminar"></i>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="card col-md-3 imagen-galeria" style={{ width: '18rem' }}>
-                                <img className="card-img-top mt-3" src={images.maquinas} alt="Card image cap" />
-                                <div className="card-body">
-                                    <h5 class="text-center card-title">Título de la imagen</h5>
-                                    <div className="flexd">
-                                        <div className="centrar">
-                                            Status
-                                            <Switch
-                                                onChange={onChange}
-                                                onClick={onChange}
-                                            />
-                                        </div>
-                                        <div className="centrar">
-                                            Eliminar
-                                            <i className="fas fa-trash-alt eliminar"></i>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="card col-md-3 imagen-galeria" style={{ width: '18rem' }}>
-                                <img className="card-img-top mt-3" src={images.maquinas} alt="Card image cap" />
-                                <div className="card-body">
-                                    <h5 class="text-center card-title">Título de la imagen</h5>
-                                    <div className="flexd">
-                                        <div className="centrar">
-                                            Status
-                                            <Switch
-                                                onChange={onChange}
-                                                onClick={onChange}
-                                            />
-                                        </div>
-                                        <div className="centrar">
-                                            Eliminar
-                                            <i className="fas fa-trash-alt eliminar"></i>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
 
                         </div>
 
@@ -179,35 +96,7 @@ export const Galeria = () => {
 
                 </div>
             </div>
+           
         </>
     )
 }
-
-
-
-
-                    // <div className="card tarjeta-noticias">
-                    //     <div className="row p-4">
-                    //         <div className="col-md-4">
-                    //             <img src={images.maquinas} className="w-100" alt="imagen" />
-                    //         </div>
-                    //         <div className="col-md-8 px-3">
-                    //             <div className="card-block px-3">
-                    //                 <h4 className="card-title">Título de la imagen</h4>
-                    //             </div>
-                    //         </div>
-                    //         <div className='col-md-12 edicion'>
-                    //             <div className="centrar">
-                    //                 Status
-                    //                 <Switch
-                    //                     onChange={onChange}
-                    //                     onClick={onChange}
-                    //                 />
-                    //             </div>
-                    //             <div className="centrar">
-                    //                 Eliminar
-                    //                 <i className="fas fa-trash-alt eliminar"></i>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    // </div>

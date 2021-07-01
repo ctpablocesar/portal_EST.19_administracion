@@ -12,7 +12,7 @@ export const CalendarioEscolar = () => {
                     <input type="file" name="imagen" /> 
                 </div>
                 <div className="text-center mt-3">
-                    <button type="button" className="btn btn-success" value="Guardar">Guardar</button>
+                    <input type="submit" value="Guardar" className="btn btn-success"/>
                 </div>
             </form>
         </div>

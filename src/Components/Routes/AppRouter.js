@@ -1,8 +1,7 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route
+    Switch
 } from "react-router-dom";
 import { DashBoardRoutes } from './DashBoardRoutes';
 import { PublicRoute } from './PublicRoute'

@@ -31,19 +31,19 @@ export const Navbar = () => {
                                 <span className="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secciones
                                 </span>
                                 <div className="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-3">
-                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/calendario'>CalendarioEscolar</Link>
-                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/frase'>FraseInicio</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/anuncios'>Anuncios</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/calendario'>Calendario Escolar</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/frase'>Frase Inicio</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/galeria'>Galeria</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/noticias'>Noticias</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/contacto'>Contacto</Link>
-                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/anuncios'>Anuncios</Link>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <ul className="navbar-nav ml-auto nav-flex-icons">
                         <li className="nav-item">
-                            <a className="nav-link waves-effect waves-light" href='#'>
+                            <a className="nav-link waves-effect waves-light" href='_blank'>
                                 <i className="fas fa-sign-out-alt"></i> Cerrar Sesión
                             </a>
                         </li>

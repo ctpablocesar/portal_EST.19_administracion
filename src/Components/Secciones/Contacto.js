@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollToTop from 'react-scroll-up';
+
 
 export const Contacto = () => {
     return (
@@ -38,12 +38,6 @@ export const Contacto = () => {
 
 
             </div>
-
-
-            <ScrollToTop showUnder={350}>
-                <i className="fas fa-arrow-up go-up"></i>
-            </ScrollToTop >
-
 
         </>
     )

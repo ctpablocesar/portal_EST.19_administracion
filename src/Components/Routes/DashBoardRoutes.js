@@ -3,12 +3,14 @@ import ScrollToTop from 'react-scroll-up';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Navbar } from '../Ui/Navbar';
 import { Footer } from '../Ui/Footer';
-import { Anuncios } from '../Secciones/Anuncios';
-import { CalendarioEscolar } from '../Secciones/CalendarioEscolar';
-import { FraseInicio } from '../Secciones/FraseInicio';
-import { Galeria } from '../Secciones/Galeria';
-import { Noticias } from '../Secciones/Noticias';
-import { Contacto } from '../Secciones/Contacto';
+
+import { CalendarioEscolar } from '../Secciones/CalendarioEscolar/CalendarioEscolar';
+import { FraseInicio } from '../Secciones/FraseInicio/FraseInicio';
+import { Galeria } from '../Secciones/Galeria/Galeria';
+import { Noticias } from '../Secciones/Noticias/Noticias';
+import { Contacto } from '../Secciones/Contacto/Contacto';
+import { Anuncios } from '../Secciones/Anuncios/Anuncios';
+
 import '../../styles/dasboard.css'
 
 export const DashBoardRoutes = ({ history }) => {

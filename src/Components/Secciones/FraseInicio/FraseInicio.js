@@ -1,5 +1,5 @@
 import React from 'react'
-import { images } from '../../Resources/resources'
+import { images } from '../../../Resources/resources'
 
 export const FraseInicio = () => {
     return (

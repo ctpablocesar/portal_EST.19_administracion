@@ -1,8 +1,8 @@
 import React from 'react'
-import { images } from '../../Resources/resources';
+import { images } from '../../../Resources/resources';
 import Switch from 'rc-switch';
 import "rc-switch/assets/index.css";
-import '../../styles/administracion.css'
+import '../../../styles/administracion.css'
 
 export const Noticias = () => {
 
@@ -64,7 +64,7 @@ export const Noticias = () => {
 
 
 
-                   <div className="card tarjeta-noticias">
+                <div className="card tarjeta-noticias">
                     <div className="row p-4">
                         <div className="col-md-4">
                             <img src={images.maquinas} className="w-100" alt="imagen de la noticia" />

@@ -2,10 +2,19 @@ import React, { useState } from 'react';
 import { images } from '../../Resources/resources';
 import '../../styles/administracion.css';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { startLogout } from '../../actions/auth';
 
 export const Navbar = () => {
 
+    const dispatch = useDispatch();
+
     const [abrir, setAbrir] = useState(false);
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        dispatch(startLogout());
+    }
 
     return (
         <div className='navbar2'>
@@ -43,9 +52,9 @@ export const Navbar = () => {
                     </div>
                     <ul className="navbar-nav ml-auto nav-flex-icons">
                         <li className="nav-item">
-                            <a className="nav-link waves-effect waves-light" href='_blank'>
+                            <span className="nav-link waves-effect waves-light logout" onClick={handleLogout}>
                                 <i className="fas fa-sign-out-alt"></i> Cerrar Sesión
-                            </a>
+                            </span>
                         </li>
                     </ul>
                 </div>

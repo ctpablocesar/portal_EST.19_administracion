@@ -8,4 +8,7 @@ export const types = {
     startLoading: '[Ui] Cargando',
     finishLoading: '[Ui] Finalizado',
 
+    anuncios: '[anuncios] Cargada de anuncios',
+    saveAnuncios: '[anuncios] Guardando anuncios',
+
 }

@@ -14,7 +14,6 @@ import { Anuncios } from '../Secciones/Anuncios/Anuncios';
 import '../../styles/dasboard.css'
 
 export const DashBoardRoutes = ({ history }) => {
-    console.log(history)
 
     return (
         <div className="wrapper">

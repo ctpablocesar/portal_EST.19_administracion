@@ -3,7 +3,6 @@ body::-webkit-scrollbar {
   background-color: lightgrey;
 }
 
-
 body::-webkit-scrollbar-thumb {
   background-color: rgb(168, 168, 168);
 }
@@ -250,9 +249,13 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+/*Estilos modal*/
+
+
+
 /*Navbar*/
 
-.logout:hover, #navbarDropdownMenuLink-3:hover{
+.logout:hover, #navbarDropdownMenuLink-3:hover {
   cursor: pointer;
 }
 

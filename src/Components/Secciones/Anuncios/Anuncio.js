@@ -1,24 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Switch from 'rc-switch';
+import Moment from 'react-moment';
+import 'moment/locale/es';
+
 import { images } from '../../../Resources/resources'
 
-export const Anuncio = () => {
+export const Anuncio = ({ handleOpen, anuncio }) => {
+
+    const { titulo, descripcion, imagen, fecha } = anuncio;
+
+    const [status, setStatus] = useState(anuncio.status);
 
     const onChange = () => {
-        console.log('nada')
+        setStatus(!status);
     }
 
     return (
-        <div className="card col-sm-5 tarjeta-noticias m-3" >
+        <div className="card col-sm-5 tarjeta-noticias m-3">
             <div className="row no-gutters">
                 <div className="col-sm-5 p-3">
-                    <img className="card-img" src={images.maquinas} alt="Suresh Dasari Card" />
+                    <img className="card-img" src={imagen} alt="imagen del anuncio`" />
                 </div>
                 <div className="col-sm-7">
                     <div className="card-body">
-                        <h5 className="card-title"><strong>Titulo del anuncio</strong></h5>
-                        <p className="card-text">Suresh lo Dasari is a founder and technical lead developer in tutlane.</p>
-                        <p className="card-text text-right"><small className="text-muted">Última actualización hace 3 min</small></p>
+                        <h5 className="card-title"><strong>{titulo}</strong></h5>
+                        <p className="card-text">{descripcion}</p>
+                        <p className="card-text text-right"><small className="text-muted"> <Moment fromNow>{fecha}</Moment></small></p>
                     </div>
                 </div>
             </div>
@@ -26,13 +33,14 @@ export const Anuncio = () => {
                 <div className="centrar divstatus">
                     Status
                     <Switch
+                        checked={status}
                         onChange={onChange}
                         onClick={onChange}
                     />
                 </div>
-                <div className="centrar diveditar">
+                <div className="centrar diveditar" onClick={() => handleOpen()}>
                     Editar
-                    <i className="fas fa-edit editar" data-toggle="modal" data-target="#exampleModalCenter"></i>
+                    <i className="fas fa-edit editar"></i>
                 </div>
                 <div className="centrar diveliminar">
                     Eliminar

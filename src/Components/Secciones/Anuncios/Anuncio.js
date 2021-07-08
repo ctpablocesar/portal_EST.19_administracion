@@ -3,7 +3,6 @@ import Switch from 'rc-switch';
 import Moment from 'react-moment';
 import 'moment/locale/es';
 
-import { images } from '../../../Resources/resources'
 
 export const Anuncio = ({ handleOpen, anuncio }) => {
 
@@ -19,7 +18,7 @@ export const Anuncio = ({ handleOpen, anuncio }) => {
         <div className="card col-sm-5 tarjeta-noticias m-3">
             <div className="row no-gutters">
                 <div className="col-sm-5 p-3">
-                    <img className="card-img" src={imagen} alt="imagen del anuncio`" />
+                    <img className="card-img" src={imagen} alt="imagen del anuncio" />
                 </div>
                 <div className="col-sm-7">
                     <div className="card-body">
@@ -29,7 +28,7 @@ export const Anuncio = ({ handleOpen, anuncio }) => {
                     </div>
                 </div>
             </div>
-            <div className='col-md-12 edicion'>
+            <div className=' edicion'>
                 <div className="centrar divstatus">
                     Status
                     <Switch

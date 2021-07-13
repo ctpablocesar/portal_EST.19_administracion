@@ -13,7 +13,9 @@ export const types = {
 
     anuncios: '[anuncios] Cargada de anuncios',
     saveAnuncios: '[anuncios] Guardando anuncios',
-    saveActiveAnuncio: '[anuncios] Guardando el anuncio',
-    saveImageAnuncioActive: '[anuncios] Guardando la imagen del anuncio'
+    setActiveAnuncio: '[anuncios] Guardando el anuncio',
+    saveImageAnuncioActive: '[anuncios] Guardando la imagen del anuncio',
+    resetAnuncios: '[anuncios] Formateando anuncios',
+    deleteAnuncio: '[anuncios] Eliminar un anucnio',
 
 }

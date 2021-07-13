@@ -4,15 +4,9 @@ import Moment from 'react-moment';
 import 'moment/locale/es';
 
 
-export const Anuncio = ({ handleOpen, anuncio }) => {
+export const Anuncio = ({ handleChangeStatus, handleEdit, handleDelete, anuncio }) => {
 
-    const { titulo, descripcion, imagen, fecha } = anuncio;
-
-    const [status, setStatus] = useState(anuncio.status);
-
-    const onChange = () => {
-        setStatus(!status);
-    }
+    const { titulo, descripcion, imagen, fecha, id, status } = anuncio;
 
     return (
         <div className="card col-sm-5 tarjeta-noticias m-3">
@@ -28,21 +22,21 @@ export const Anuncio = ({ handleOpen, anuncio }) => {
                     </div>
                 </div>
             </div>
-            <div className=' edicion'>
+            <div className='edicion'>
                 <div className="centrar divstatus">
-                    Status
+                    <span>Status </span>
                     <Switch
                         checked={status}
-                        onChange={onChange}
-                        onClick={onChange}
+                        onChange={() => handleChangeStatus(id,status)}
+                        onClick={() => handleChangeStatus(id,status)}
                     />
                 </div>
-                <div className="centrar diveditar" onClick={() => handleOpen()}>
-                    Editar
+                <div className="centrar diveditar" onClick={() => handleEdit(anuncio)}>
+                    <span>Editar </span>
                     <i className="fas fa-edit editar"></i>
                 </div>
-                <div className="centrar diveliminar">
-                    Eliminar
+                <div className="centrar diveliminar" onClick={() => handleDelete(id)}>
+                    <span>Eliminar </span>
                     <i className="fas fa-trash-alt eliminar"></i>
                 </div>
             </div>

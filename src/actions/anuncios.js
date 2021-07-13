@@ -30,8 +30,6 @@ const saveAnuncios = (data) => ({
 export const startUpload = (file) => {
     return async (dispatch) => {
 
-        console.log('estoy guardando la imagen')
-
         const guardado = await fileUpload(file);
 
         const { url, nombre } = guardado;
@@ -54,14 +52,10 @@ export const startSaveAnuncio = (titulo, descripcion) => {
 
         dispatch(startSavingSomething())
 
-        console.log(titulo, descripcion);
+        const { imagen, tituloImagen } = getState().anuncios.active;
 
-        const { imagen } = getState().anuncios.active;
-
-        const resp = await fetchConToken('anuncios', { titulo: titulo, descripcion: descripcion, imagen: imagen }, 'POST');
+        const resp = await fetchConToken('anuncios', { titulo: titulo, descripcion: descripcion, imagen: imagen, tituloImagen: tituloImagen }, 'POST');
         const body = await resp.json();
-
-        console.log(body)
 
         if (body.ok) {
             Swal.fire({
@@ -78,12 +72,98 @@ export const startSaveAnuncio = (titulo, descripcion) => {
                 timer: 1500
             })
         }
+        dispatch(resetAnuncios())
         dispatch(finishSavingSomething())
 
     }
 }
 
-const saveActiveAnuncio = (data) => ({
-    type: types.saveActiveAnuncio,
-    payload: data
+export const startDeleteAnuncio = (id) => {
+
+
+    return async (dispatch) => {
+        dispatch(startSavingSomething())
+
+        const resp = await fetchConToken(`anuncios/${id}`, null, 'DELETE');
+        const body = await resp.json();
+
+        if (body.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Anuncio eliminado exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: body.msg,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        dispatch(finishSavingSomething())
+
+    }
+}
+
+export const startUplaodAnuncio = (titulo, descripcion) => {
+    return async (dispatch, getState) => {
+
+        dispatch(startSavingSomething())
+
+        const { id, tituloImagen, imagen } = getState().anuncios.active;
+
+        const resp = await fetchConToken(`anuncios/${id}`, { titulo: titulo, descripcion: descripcion, tituloImagen: tituloImagen, imagen: imagen }, 'PUT');
+        const body = await resp.json();
+
+        if (body.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Anuncio actualizado exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: body.msg,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+
+        dispatch(resetAnuncios())
+        dispatch(finishSavingSomething())
+
+    }
+}
+
+export const changeStatusAnuncio = (id, status) => {
+    return async (dispatch) => {
+
+        dispatch(startSavingSomething())
+
+        const resp = await fetchConToken(`anuncios/${id}`, { status: !status }, 'PUT')
+        const body = await resp.json()
+
+        if (!body.ok) {
+            Swal.fire({
+                icon: 'error',
+                title: body.msg,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+
+        dispatch(finishSavingSomething())
+
+    }
+}
+
+export const startSetAnuncioActive = (anuncio) => ({
+    type: types.setActiveAnuncio,
+    payload: anuncio
 })
+
+export const resetAnuncios = () => ({ type: types.resetAnuncios })

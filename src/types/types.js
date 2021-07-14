@@ -18,4 +18,14 @@ export const types = {
     resetAnuncios: '[anuncios] Formateando anuncios',
     deleteAnuncio: '[anuncios] Eliminar un anucnio',
 
+    noticias: '[noticias] Cargada de noticias',
+    saveNoticias: '[noticias] Guardando noticias',
+    setActiveNoticia: '[noticias] Guardando la noticia',
+    saveImageNoticiaActive: '[noticias] Guardando la imagen de la noticia',
+    resetNoticias: '[noticias] Formateando noticias',
+    deleteNoticia: '[noticias] Eliminar un noticia',
+
+    saveImages: '[galeria] Guardando imagen',
+    saveActiveImage: '[galeria] Guardando imagen activa'
+
 }

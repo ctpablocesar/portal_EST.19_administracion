@@ -12,7 +12,7 @@ export const Anuncios = () => {
 
     const dispatch = useDispatch();
 
-    const ui = useSelector(state => state.ui);
+    const { saving } = useSelector(state => state.ui);
 
     const { anuncios, active } = useSelector(state => state.anuncios)
 
@@ -37,7 +37,7 @@ export const Anuncios = () => {
 
     useEffect(() => {
         dispatch(startLoadingAnuncios())
-    }, [ui.saving]);
+    }, [saving]);
 
     useEffect(() => { active && setValue({ titulo: active.titulo, descripcion: active.descripcion }) }, [active])
 
@@ -112,7 +112,6 @@ export const Anuncios = () => {
                             :
                             <h1 className='sinContenido'>No hay anuncios para mostrar</h1>
                     }
-
 
                     <Modal
                         open={open}

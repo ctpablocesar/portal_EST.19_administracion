@@ -43,7 +43,7 @@ export const Navbar = () => {
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/anuncios'>Anuncios</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/calendario'>Calendario Escolar</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/frase'>Frase Inicio</Link>
-                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/galeria'>Galeria</Link>
+                                    <Link className="dropdown-item waves-effect waves-light" to='/admin/galeria'>Galería</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/noticias'>Noticias</Link>
                                     <Link className="dropdown-item waves-effect waves-light" to='/admin/contacto'>Contacto</Link>
                                 </div>

@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteMensaje, startLoadingMensajes } from '../../../actions/contacto'
+import { Mensaje } from './Mensaje'
 
 
 export const Contacto = () => {
+
+    const dispatch = useDispatch()
+
+    const { mensajes } = useSelector(state => state.contacto)
+
+    const { saving } = useSelector(state => state.ui)
+
+    useEffect(() => {
+        dispatch(startLoadingMensajes())
+    }, [saving]);
+
+    const handleDelete = (id) => {
+        dispatch(deleteMensaje(id))
+    }
+
     return (
         <>
 
@@ -10,31 +28,15 @@ export const Contacto = () => {
             </div>
             <div className="row d-flex justify-content-center">
 
-
-                <div className="col-md-3 card mb-3 imagen-galeria card-contacto" style={{ maxWidth: '18rem' }}>
-                    <div className="card-header font-weight-bold text-uppercase">Nombre</div>
-                    <div className="card-body">
-                        <h5 className="card-title text-success font-weight-bold">ASUNTO</h5>
-                        <p>Asunto del mensaje</p>
-                        <div className="card-text">
-                            <label className="font-weight-bold">Mensaje:</label>
-                            <p className="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero minus repellat doloribus, eveniet porro hic veniam eaque! Deserunt iusto repudiandae assumenda, voluptatum laborum eveniet, totam error inventore ab nulla voluptates?</p>
-                            <div className="contacto">
-                                <hr />
-                                <h5 className="card-title text-success font-weight-bold">CONTACTO</h5>
-                                <label className="font-weight-bold">Telefono:</label>
-                                <p>Teléfono del usuario</p>
-                                <label className="font-weight-bold">Correo electrónico:</label>
-                                <p>Correo del usuario</p>
-                            </div>
-                        </div>
-                        <hr />
-                        <div className="centrar text-center diveliminar">
-                            Eliminar
-                            <i className="fas fa-trash-alt eliminar"></i>
-                        </div>
-                    </div>
-                </div>
+                {
+                    !!mensajes[0]
+                        ?
+                        mensajes.map((data) => (
+                            <Mensaje handleDelete={handleDelete} mensaje={data} key={data.id} />
+                        ))
+                        :
+                        <h1 className='sinContenido'>No hay mensajes para mostrar</h1>
+                }
 
 
             </div>

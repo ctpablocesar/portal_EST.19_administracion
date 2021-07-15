@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import Modal from '@material-ui/core/Modal';
 
-import { images } from '../../../Resources/resources'
-import Switch from 'rc-switch';
 import "rc-switch/assets/index.css";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { startLoadingImages, startSavingImage, startUpload } from '../../../actions/galeria';
+import { changeStatusGaleria, startDeleteGaleria, startLoadingImages, startSavingImage, startUpload } from '../../../actions/galeria';
 import { useForm } from '../../../hooks/useForm';
 import { Imagen } from './Imagen';
 
@@ -76,11 +74,11 @@ export const Galeria = () => {
     }
 
     const handleDelete = (id) => {
-        // dispatch(startDeleteGaleria(id))
+        dispatch(startDeleteGaleria(id))
     }
 
     const handleChangeStatus = (id, status) => {
-        // dispatch(changeStatusGaleria(id, status))
+        dispatch(changeStatusGaleria(id, status))
     }
 
     return (
@@ -171,14 +169,10 @@ export const Galeria = () => {
                                             }
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
                     </Modal>
-
-
-
                 </div>
             </div>
 

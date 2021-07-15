@@ -1,6 +1,6 @@
 import { types } from '../types/types'
 import Swal from 'sweetalert2';
-import { fetchConToken } from '../helpers/fetch';
+import { fetchConToken, fetchSinToken } from '../helpers/fetch';
 import { finishLoading, finishSavingSomething, startLoading, startSavingSomething } from './ui';
 import { fileUpload } from '../helpers/fileUpload';
 
@@ -9,7 +9,7 @@ export const startLoadingNoticias = () => {
 
         dispatch(startLoading())
 
-        const resp = await fetchConToken('noticias');
+        const resp = await fetchSinToken('noticias');
         const body = await resp.json();
 
         if (body.ok) {
@@ -17,7 +17,7 @@ export const startLoadingNoticias = () => {
         } else {
             Swal.fire('Error', body.msg, 'error');
         }
-        dispatch(finishLoading())
+        dispatch(finishSavingSomething())
 
     }
 }

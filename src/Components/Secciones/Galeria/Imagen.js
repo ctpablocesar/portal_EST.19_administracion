@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch } from '@material-ui/core'
+import Switch from 'rc-switch';
 import "rc-switch/assets/index.css";
 
 export const Imagen = ({ handleChangeStatus, handleEdit, handleDelete, onChange, data }) => {
@@ -13,7 +13,7 @@ export const Imagen = ({ handleChangeStatus, handleEdit, handleDelete, onChange,
                 <h5 className="text-center card-title">{titulo}</h5>
                 <div className="flexd">
                     <div className="centrar divstatus">
-                        <span>Status</span>
+                        <span>Status </span>
                         <Switch
                             checked={status}
                             onChange={() => handleChangeStatus(id, status)}

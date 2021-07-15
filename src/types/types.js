@@ -16,7 +16,7 @@ export const types = {
     setActiveAnuncio: '[anuncios] Guardando el anuncio',
     saveImageAnuncioActive: '[anuncios] Guardando la imagen del anuncio',
     resetAnuncios: '[anuncios] Formateando anuncios',
-    deleteAnuncio: '[anuncios] Eliminar un anucnio',
+    deleteAnuncio: '[anuncios] Eliminar un anuncio',
 
     noticias: '[noticias] Cargada de noticias',
     saveNoticias: '[noticias] Guardando noticias',
@@ -26,6 +26,11 @@ export const types = {
     deleteNoticia: '[noticias] Eliminar un noticia',
 
     saveImages: '[galeria] Guardando imagen',
-    saveActiveImage: '[galeria] Guardando imagen activa'
+    saveActiveImage: '[galeria] Guardando imagen activa',
+    resetActiveImage: '[galeria] Formateando galeria',
+    
+    saveMensajes: '[contacto] Guardando mensaje',
 
+    loadCalendario: '[calendario] Cargada de calendario',
+    saveCalendarioActive: '[calendario] Guardando el calendario'
 }

@@ -5,13 +5,17 @@ import { uiReducer } from '../reducers/uiReducer';
 import { anunciosReducer } from '../reducers/anunciosReducer';
 import { noticiasReducer } from '../reducers/noticiasReducer';
 import { galeriaReducer } from '../reducers/galeriaReducer';
+import { contactoReducer } from '../reducers/contactoReducer';
+import { calendarioReducer } from '../reducers/calendarioReducer';
 
 const reducers = combineReducers({
     auth: authReducer,
     ui: uiReducer,
     anuncios: anunciosReducer,
     noticias: noticiasReducer,
-    galeria: galeriaReducer
+    galeria: galeriaReducer,
+    contacto: contactoReducer,
+    calendario: calendarioReducer
 });
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;

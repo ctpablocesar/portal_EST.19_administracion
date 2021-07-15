@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 
-import { fetchConToken } from "../helpers/fetch"
+import { fetchConToken, fetchSinToken } from "../helpers/fetch"
 import { types } from "../types/types"
 import { finishLoading, finishSavingSomething, startLoading, startSavingSomething } from "./ui"
 import { fileUpload } from '../helpers/fileUpload';
@@ -10,7 +10,7 @@ export const startLoadingImages = () => {
 
         dispatch(startLoading())
 
-        const resp = await fetchConToken('galeria')
+        const resp = await fetchSinToken('galeria')
         const body = await resp.json()
 
         if (body.ok) {
@@ -80,7 +80,61 @@ export const startSavingImage = (titulo) => {
             })
         }
 
+        dispatch(resetActiveImage());
+
         dispatch(finishSavingSomething())
 
+    }
+}
+
+const resetActiveImage = () => ({ type: types.resetActiveImage })
+
+export const changeStatusGaleria = (id, status) => {
+    return async (dispatch) => {
+
+        dispatch(startSavingSomething())
+
+        const resp = await fetchConToken(`galeria/${id}`, { status: !status }, 'PUT')
+        const body = await resp.json()
+
+        if (!body.ok) {
+            Swal.fire({
+                icon: 'error',
+                title: body.msg,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+
+        dispatch(finishSavingSomething())
+
+    }
+}
+
+export const startDeleteGaleria = (id) => {
+    return async (dispatch) => {
+
+        dispatch(startSavingSomething())
+
+        const resp = await fetchConToken(`galeria/${id}`, '', 'DELETE')
+        const body = await resp.json()
+
+        if (body.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Imagen eliminada exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: body.msg,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+
+        dispatch(finishSavingSomething())
     }
 }

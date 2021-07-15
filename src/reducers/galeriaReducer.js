@@ -21,6 +21,11 @@ export const galeriaReducer = (state = initialState, action) => {
                     imagen: action.payload.url
                 }
             }
+        case types.resetActiveImage:
+            return {
+                ...state,
+                active: {}
+            }
         default:
             return state
     }

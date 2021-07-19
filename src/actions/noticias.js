@@ -17,7 +17,7 @@ export const startLoadingNoticias = () => {
         } else {
             Swal.fire('Error', body.msg, 'error');
         }
-        dispatch(finishSavingSomething())
+        dispatch(finishLoading())
 
     }
 }

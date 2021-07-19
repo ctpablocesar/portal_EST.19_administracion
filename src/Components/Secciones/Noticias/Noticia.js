@@ -1,7 +1,6 @@
 import React from 'react'
 import Switch from 'rc-switch';
 import "rc-switch/assets/index.css";
-import { images } from '../../../Resources/resources'
 import Moment from 'react-moment';
 import 'moment/locale/es';
 

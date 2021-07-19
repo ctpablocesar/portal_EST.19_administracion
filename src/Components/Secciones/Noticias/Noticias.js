@@ -21,7 +21,7 @@ export const Noticias = () => {
 
     const [vacia, setVacia] = useState(true);
 
-    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '' });
+    const [value, handleInputChange, setValue] = useForm({ titulo: '', descripcion: '' });
 
     const { titulo: tituloModal, descripcion } = value;
 
@@ -39,10 +39,6 @@ export const Noticias = () => {
         setOpen(false);
         dispatch(resetNoticias())
     };
-
-    const onChange = () => {
-        console.log('nada')
-    }
 
     const handleUploadImage = (e) => {
         e.preventDefault()
@@ -156,7 +152,6 @@ export const Noticias = () => {
                                                     rows="8"
                                                     cols="30"
                                                     className="form-control disabled"
-                                                    id="descripcion"
                                                     name='descripcion'
                                                     value={descripcion}
                                                     onChange={handleInputChange}

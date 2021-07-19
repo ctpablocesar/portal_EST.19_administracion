@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Switch from 'rc-switch';
 import Moment from 'react-moment';
 import 'moment/locale/es';

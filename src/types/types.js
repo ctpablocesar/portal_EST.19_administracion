@@ -32,5 +32,8 @@ export const types = {
     saveMensajes: '[contacto] Guardando mensaje',
 
     loadCalendario: '[calendario] Cargada de calendario',
-    saveCalendarioActive: '[calendario] Guardando el calendario'
+    saveCalendarioActive: '[calendario] Guardando el calendario',
+
+    saveFrase: '[frase] Cargando frase',
+    setImageActive: '[frase] Guardando imagen active'
 }

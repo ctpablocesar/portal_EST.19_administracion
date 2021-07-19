@@ -35,8 +35,6 @@ export const saveCalendario = () => {
 
         const img = getState().calendario.active;
 
-        console.log(img)
-
         const resp = await fetchConToken('cale/60e32f3e48a7a8112c6b3aba', { imagen: img }, 'PUT')
         const body = await resp.json()
 

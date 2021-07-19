@@ -60,7 +60,7 @@ export const CalendarioEscolar = () => {
             </div>
             <div className="text-center container mt-5 mb-5">
                 {
-                    saving == saving
+                    !saving
                     &&
                     <img src={calendario} width="600" height="250" alt="calendarioescolar" className="img-fluid" />
                 }

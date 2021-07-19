@@ -22,7 +22,7 @@ export const Anuncios = () => {
 
     const [vacia, setVacia] = useState(true);
 
-    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '' });
+    const [value, handleInputChange, setValue] = useForm({ titulo: '', descripcion: '' });
 
     const { titulo: tituloModal, descripcion } = value;
 

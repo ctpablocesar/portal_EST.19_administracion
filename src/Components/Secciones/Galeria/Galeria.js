@@ -22,7 +22,7 @@ export const Galeria = () => {
 
     const [titulo, setTitulo] = useState('');
 
-    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '' });
+    const [value, handleInputChange, setValue] = useForm({ titulo: '' });
 
     const { titulo: tituloModal } = value;
 
@@ -32,17 +32,12 @@ export const Galeria = () => {
 
     useEffect(() => { active && setValue({ titulo: active.titulo }) }, [active])
 
-    const onChange = () => {
-        console.log('nada')
-    }
-
     const handleOpen = () => {
         setOpen(true);
     };
 
     const handleClose = () => {
         setOpen(false);
-        // dispatch(resetAnuncios())
     };
 
     const handleUploadImage = (e) => {

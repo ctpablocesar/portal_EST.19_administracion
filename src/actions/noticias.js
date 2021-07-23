@@ -108,7 +108,7 @@ export const startDeleteNoticia = (id) => {
     }
 }
 
-export const startUplaodNoticia = ({ titulo, descripcion }) => {
+export const startUplaodNoticia = ( titulo, descripcion ) => {
     return async (dispatch, getState) => {
 
         dispatch(startSavingSomething())

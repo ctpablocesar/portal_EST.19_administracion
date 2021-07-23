@@ -108,7 +108,7 @@ export const startDeleteAnuncio = (id) => {
     }
 }
 
-export const startUplaodAnuncio = ({ titulo, descripcion }) => {
+export const startUplaodAnuncio = ( titulo, descripcion ) => {
     return async (dispatch, getState) => {
 
 

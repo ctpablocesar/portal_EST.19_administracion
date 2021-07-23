@@ -67,11 +67,12 @@ export const startSaveAnuncio = (titulo, descripcion) => {
         } else {
             Swal.fire({
                 icon: 'error',
-                title: 'Falló al guardar el anuncio',
+                title: body.msg,
                 showConfirmButton: false,
                 timer: 1500
             })
         }
+
         dispatch(resetAnuncios())
         dispatch(finishSavingSomething())
 
@@ -107,8 +108,9 @@ export const startDeleteAnuncio = (id) => {
     }
 }
 
-export const startUplaodAnuncio = (titulo, descripcion) => {
+export const startUplaodAnuncio = ({ titulo, descripcion }) => {
     return async (dispatch, getState) => {
+
 
         dispatch(startSavingSomething())
 

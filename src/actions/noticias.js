@@ -50,9 +50,6 @@ const saveImageNoticiaActive = (url, nombre) => ({
 export const startSaveNoticia = (titulo, descripcion) => {
     return async (dispatch, getState) => {
 
-        console.log('soy el titulo')
-        console.log(titulo)
-
         dispatch(startSavingSomething())
 
         const { imagen, tituloImagen } = getState().noticias.active;
@@ -111,7 +108,7 @@ export const startDeleteNoticia = (id) => {
     }
 }
 
-export const startUplaodNoticia = (titulo, descripcion) => {
+export const startUplaodNoticia = ({ titulo, descripcion }) => {
     return async (dispatch, getState) => {
 
         dispatch(startSavingSomething())

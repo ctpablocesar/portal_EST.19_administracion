@@ -21,22 +21,23 @@ export const Noticias = () => {
 
     const [vacia, setVacia] = useState(true);
 
-    const [value, handleInputChange, setValue] = useForm({ titulo: '', descripcion: '' });
-
-    const { titulo: tituloModal, descripcion } = value;
+    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '' });
 
     useEffect(() => {
         dispatch(startLoadingNoticias())
     }, [saving])
 
-    useEffect(() => { active && setValue({ titulo: active.titulo, descripcion: active.descripcion }) }, [active])
+    useEffect(() => {
+        active.imagen && setValue({ titulo: active.titulo, descripcion: active.descripcion })
+    }, [active])
 
     const handleOpen = () => {
-        setOpen(true);
+        setOpen(true)
     };
 
     const handleClose = () => {
-        setOpen(false);
+        reset()
+        setOpen(false)
         dispatch(resetNoticias())
     };
 
@@ -60,13 +61,13 @@ export const Noticias = () => {
         const desc = e.target.descripcion.value;
         if (active.id) {
             setTimeout(() => {
-                dispatch(startUplaodNoticia(titulo, desc))
+                dispatch(startUplaodNoticia(titulo,desc))
                 handleClose()
                 setTitulo('')
             }, 2000);
         } else {
             setTimeout(() => {
-                dispatch(startSaveNoticia(titulo, desc))
+                dispatch(startSaveNoticia(titulo,desc))
                 handleClose()
                 setTitulo('')
             }, 2000);
@@ -124,7 +125,7 @@ export const Noticias = () => {
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <h5 className="modal-title" id="exampleModalLongTitle">Agregar noticia</h5>
-                                    
+
                                 </div>
                                 <div className="modal-body">
 
@@ -137,7 +138,7 @@ export const Noticias = () => {
                                                     className="form-control"
                                                     id="titulo"
                                                     name='titulo'
-                                                    value={tituloModal}
+                                                    value={value.titulo}
                                                     onChange={handleInputChange}
                                                     required
                                                 />
@@ -153,7 +154,7 @@ export const Noticias = () => {
                                                     cols="30"
                                                     className="form-control disabled"
                                                     name='descripcion'
-                                                    value={descripcion}
+                                                    value={value.descripcion}
                                                     onChange={handleInputChange}
                                                     required
                                                 />

@@ -64,6 +64,13 @@ export const FraseInicio = () => {
         setOpen(false);
     }
 
+    const handleReset = (e) => {
+        e.preventDefault()
+        setTitulo('')
+        setVacia(true)
+        reset()
+    }
+
     return (
         <>
             <input
@@ -84,8 +91,13 @@ export const FraseInicio = () => {
                     <form className='calendario mt-5' onSubmit={handleSaveFrase}>
                         <label className="font-weight-bold">Imagen: </label>
 
-                        <div>
+                        <div>{
+                            vacia
+                            ?
+                            <button onClick={handleUploadImage} className='btn btn-secondary'>Agregar imagen</button>
+                            :
                             <button onClick={handleUploadImage} className='btn btn-secondary'>Actualizar imagen</button>
+                            }
                             {
                                 !vacia
                                 &&
@@ -96,6 +108,7 @@ export const FraseInicio = () => {
                         <input
                             type="text"
                             name="titulo"
+                            className="form-control disabled tarea"
                             value={tituloForm}
                             onChange={handleInputChange}
                             required
@@ -112,7 +125,7 @@ export const FraseInicio = () => {
                         />
                         <div className="p-2">
                             <input type="submit" value="Actualizar" className='mt-3 btn btn-success' />
-                            <input type="reset" value="Resetear" id="reset" className=' ml-3 mt-3 btn btn-danger' />
+                            <input type="button" value="Resetear" className=' ml-3 mt-3 btn btn-danger' onClick={handleReset} />
                         </div>
                     </form>
                 </div>

@@ -44,7 +44,6 @@ export const LoginScreen = () => {
                             <label>Correo Electrónico:</label>
                             <input
                                 type="text"
-                                placeholder="Email"
                                 name="email"
                                 className="inputs-login"
                                 autoComplete="off"
@@ -54,7 +53,6 @@ export const LoginScreen = () => {
                             <label>Contraseña:</label>
                             <input
                                 type="password"
-                                placeholder="Password"
                                 name="password"
                                 className="inputs-login"
                                 value={password}

@@ -54,14 +54,15 @@ const saveImageImageActive = (url, nombre) => ({
     }
 })
 
-export const startSavingImage = (titulo) => {
+export const startSavingImage = (data) => {
+
     return async (dispatch, getstate) => {
 
         dispatch(startSavingSomething())
 
-        const { imagen } = getstate().galeria.active;
+        const { imagen, tituloImagen } = getstate().galeria.active;
 
-        const resp = await fetchConToken('galeria', { imagen: imagen, titulo: titulo }, 'POST')
+        const resp = await fetchConToken('galeria', { imagen: imagen, titulo: tituloImagen }, 'POST')
         const body = await resp.json()
 
         if (body.ok) {
@@ -87,7 +88,7 @@ export const startSavingImage = (titulo) => {
     }
 }
 
-const resetActiveImage = () => ({ type: types.resetActiveImage })
+export const resetActiveImage = () => ({ type: types.resetActiveImage })
 
 export const changeStatusGaleria = (id, status) => {
     return async (dispatch) => {

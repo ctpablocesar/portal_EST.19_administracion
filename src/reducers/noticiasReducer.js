@@ -17,9 +17,8 @@ export const noticiasReducer = (state = initialState, action) => {
             return {
                 ...state,
                 active: {
-                    ...state.active,
-                    imagen: action.payload.url,
-                    tituloImagen: action.payload.nombre
+                    tituloImagen: action.payload.nombre,
+                    imagen: action.payload.url
                 }
             }
         case types.resetNoticias:

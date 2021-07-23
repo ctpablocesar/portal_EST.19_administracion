@@ -4,7 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import "rc-switch/assets/index.css";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeStatusGaleria, startDeleteGaleria, startLoadingImages, startSavingImage, startUpload } from '../../../actions/galeria';
+import { changeStatusGaleria, resetActiveImage, startDeleteGaleria, startLoadingImages, startSavingImage, startUpload } from '../../../actions/galeria';
 import { useForm } from '../../../hooks/useForm';
 import { Imagen } from './Imagen';
 
@@ -22,15 +22,9 @@ export const Galeria = () => {
 
     const [titulo, setTitulo] = useState('');
 
-    const [value, handleInputChange, setValue] = useForm({ titulo: '' });
-
-    const { titulo: tituloModal } = value;
-
     useEffect(() => {
         dispatch(startLoadingImages())
     }, [saving])
-
-    useEffect(() => { active && setValue({ titulo: active.titulo }) }, [active])
 
     const handleOpen = () => {
         setOpen(true);
@@ -38,6 +32,7 @@ export const Galeria = () => {
 
     const handleClose = () => {
         setOpen(false);
+        dispatch(resetActiveImage())
     };
 
     const handleUploadImage = (e) => {
@@ -56,16 +51,11 @@ export const Galeria = () => {
 
     const handleSaveImage = (e) => {
         e.preventDefault()
-        const titulo = e.target.titulo.value;
-        console.log(titulo)
-        if (active.id) {
-        } else {
-            setTimeout(() => {
-                dispatch(startSavingImage(titulo))
-                handleClose()
-                setTitulo('')
-            }, 2000);
-        }
+        setTimeout(() => {
+            dispatch(startSavingImage())
+            handleClose()
+            setTitulo('')
+        }, 2000);
     }
 
     const handleDelete = (id) => {
@@ -117,20 +107,6 @@ export const Galeria = () => {
                                 <div className="modal-body">
 
                                     <form onSubmit={handleSaveImage}>
-                                        <div className="form-group row">
-                                            <label className="col-sm-2 col-form-label">Título: </label>
-                                            <div className="col-sm-10">
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="titulo"
-                                                    name="titulo"
-                                                    value={tituloModal}
-                                                    onChange={handleInputChange}
-                                                    required
-                                                />
-                                            </div>
-                                        </div>
                                         <div className="form-group">
                                             <label >Imagen de la galería:&nbsp;</label>
                                             {

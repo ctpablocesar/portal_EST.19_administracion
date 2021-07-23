@@ -22,9 +22,15 @@ export const Anuncios = () => {
 
     const [vacia, setVacia] = useState(true);
 
-    const [value, handleInputChange, setValue] = useForm({ titulo: '', descripcion: '' });
+    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '' });
 
-    const { titulo: tituloModal, descripcion } = value;
+    useEffect(() => {
+        dispatch(startLoadingAnuncios())
+    }, [saving]);
+
+    useEffect(() => {
+        active.imagen && setValue({ titulo: active.titulo, descripcion: active.descripcion })
+    }, [active])
 
     const handleOpen = () => {
         setOpen(true);
@@ -32,14 +38,9 @@ export const Anuncios = () => {
 
     const handleClose = () => {
         setOpen(false);
+        reset()
         dispatch(resetAnuncios())
     };
-
-    useEffect(() => {
-        dispatch(startLoadingAnuncios())
-    }, [saving]);
-
-    useEffect(() => { active && setValue({ titulo: active.titulo, descripcion: active.descripcion }) }, [active])
 
     const handleUploadImage = (e) => {
         e.preventDefault()
@@ -135,9 +136,10 @@ export const Anuncios = () => {
                                                     className="form-control"
                                                     id="titulo"
                                                     name="titulo"
-                                                    value={tituloModal}
+                                                    value={value.titulo}
                                                     onChange={handleInputChange}
                                                     required
+                                                    autoFocus
                                                 />
                                             </div>
                                         </div>
@@ -152,7 +154,7 @@ export const Anuncios = () => {
                                                     className="form-control disabled"
                                                     id="descripcion"
                                                     name="descripcion"
-                                                    value={descripcion}
+                                                    value={value.descripcion}
                                                     onChange={handleInputChange}
                                                     required
                                                 />

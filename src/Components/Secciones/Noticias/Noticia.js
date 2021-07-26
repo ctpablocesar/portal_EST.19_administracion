@@ -6,7 +6,7 @@ import 'moment/locale/es';
 
 export const Noticia = ({ handleChangeStatus, handleEdit, handleDelete, onChange, noticia }) => {
 
-    const { titulo, descripcion, fecha, imagen, id, status } = noticia;
+    const { titulo, descripcion, fecha, imagen, id, status, link } = noticia;
 
     return (
         <div className="card tarjeta-noticias">
@@ -18,6 +18,7 @@ export const Noticia = ({ handleChangeStatus, handleEdit, handleDelete, onChange
                     <div className="card-block px-3">
                         <h4 className="card-title">{titulo}</h4>
                         <p className="card-text">{descripcion}</p>
+                        <a href={link} target="_blank">{link}</a>
                         <p className="card-text text-right"><small className="text-muted"><Moment fromNow>{fecha}</Moment></small></p>
                     </div>
                 </div>

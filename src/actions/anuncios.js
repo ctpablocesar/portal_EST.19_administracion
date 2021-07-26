@@ -47,14 +47,14 @@ const saveImageAnuncioActive = (url, nombre) => ({
     }
 })
 
-export const startSaveAnuncio = (titulo, descripcion) => {
+export const startSaveAnuncio = (titulo, descripcion, link) => {
     return async (dispatch, getState) => {
 
         dispatch(startSavingSomething())
 
         const { imagen, tituloImagen } = getState().anuncios.active;
 
-        const resp = await fetchConToken('anuncios', { titulo: titulo, descripcion: descripcion, imagen: imagen, tituloImagen: tituloImagen }, 'POST');
+        const resp = await fetchConToken('anuncios', { titulo: titulo, descripcion: descripcion, imagen: imagen, tituloImagen: tituloImagen, link: link }, 'POST');
         const body = await resp.json();
 
         if (body.ok) {
@@ -108,7 +108,7 @@ export const startDeleteAnuncio = (id) => {
     }
 }
 
-export const startUplaodAnuncio = ( titulo, descripcion ) => {
+export const startUplaodAnuncio = (titulo, descripcion, link = '') => {
     return async (dispatch, getState) => {
 
 
@@ -116,7 +116,7 @@ export const startUplaodAnuncio = ( titulo, descripcion ) => {
 
         const { id, tituloImagen, imagen } = getState().anuncios.active;
 
-        const resp = await fetchConToken(`anuncios/${id}`, { titulo: titulo, descripcion: descripcion, tituloImagen: tituloImagen, imagen: imagen }, 'PUT');
+        const resp = await fetchConToken(`anuncios/${id}`, { titulo: titulo, descripcion: descripcion, tituloImagen: tituloImagen, imagen: imagen, link: link }, 'PUT');
         const body = await resp.json();
 
         if (body.ok) {

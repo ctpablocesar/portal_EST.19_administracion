@@ -17,6 +17,7 @@ export const noticiasReducer = (state = initialState, action) => {
             return {
                 ...state,
                 active: {
+                    ...state.active,
                     tituloImagen: action.payload.nombre,
                     imagen: action.payload.url
                 }

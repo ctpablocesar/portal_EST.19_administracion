@@ -22,14 +22,14 @@ export const Anuncios = () => {
 
     const [vacia, setVacia] = useState(true);
 
-    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '' });
+    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '', link: '' });
 
     useEffect(() => {
         dispatch(startLoadingAnuncios())
     }, [saving]);
 
     useEffect(() => {
-        active.imagen && setValue({ titulo: active.titulo, descripcion: active.descripcion })
+        active.imagen && setValue({ titulo: active.titulo, descripcion: active.descripcion, link: active.link })
     }, [active])
 
     const handleOpen = () => {
@@ -60,15 +60,16 @@ export const Anuncios = () => {
         e.preventDefault()
         const titulo = e.target.titulo.value;
         const desc = e.target.descripcion.value;
+        const link = e.target.link.value;
         if (active.id) {
             setTimeout(() => {
-                dispatch(startUplaodAnuncio(titulo, desc))
+                dispatch(startUplaodAnuncio(titulo, desc, link))
                 handleClose()
                 setTitulo('')
             }, 2000);
         } else {
             setTimeout(() => {
-                dispatch(startSaveAnuncio(titulo, desc))
+                dispatch(startSaveAnuncio(titulo, desc, link))
                 handleClose()
                 setTitulo('')
             }, 2000);
@@ -161,6 +162,20 @@ export const Anuncios = () => {
                                             </div>
                                         </div>
 
+                                        <div className="form-group row">
+                                            <label className="col-sm-2 col-form-label">Link: </label>
+                                            <div className="col-sm-9">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="link"
+                                                    name='link'
+                                                    value={value.link}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                        </div>
+
                                         <div className="form-group">
                                             <label >Imagen del anuncio:&nbsp;</label>
                                             {
@@ -191,7 +206,6 @@ export const Anuncios = () => {
                                                     ?
                                                     < button type="submit" className={`btn btn-success`}>Actualizar</button>
                                                     :
-
                                                     <button type="submit" className={`btn btn-success ${vacia && 'btn-disabled'}`}>Guardar</button>
                                             }
                                         </div>

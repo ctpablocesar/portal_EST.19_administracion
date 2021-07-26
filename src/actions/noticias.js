@@ -47,14 +47,14 @@ const saveImageNoticiaActive = (url, nombre) => ({
     }
 })
 
-export const startSaveNoticia = (titulo, descripcion) => {
+export const startSaveNoticia = (titulo, descripcion, link) => {
     return async (dispatch, getState) => {
 
         dispatch(startSavingSomething())
 
         const { imagen, tituloImagen } = getState().noticias.active;
 
-        const resp = await fetchConToken('noticias', { titulo: titulo, descripcion: descripcion, imagen: imagen, tituloImagen: tituloImagen }, 'POST');
+        const resp = await fetchConToken('noticias', { titulo: titulo, descripcion: descripcion, imagen: imagen, tituloImagen: tituloImagen, link: link }, 'POST');
         const body = await resp.json();
 
         console.log(body)
@@ -108,14 +108,14 @@ export const startDeleteNoticia = (id) => {
     }
 }
 
-export const startUplaodNoticia = ( titulo, descripcion ) => {
+export const startUplaodNoticia = (titulo, descripcion, link = '') => {
     return async (dispatch, getState) => {
 
         dispatch(startSavingSomething())
 
         const { id, tituloImagen, imagen } = getState().noticias.active;
 
-        const resp = await fetchConToken(`noticias/${id}`, { titulo: titulo, descripcion: descripcion, tituloImagen: tituloImagen, imagen: imagen }, 'PUT');
+        const resp = await fetchConToken(`noticias/${id}`, { titulo: titulo, descripcion: descripcion, tituloImagen: tituloImagen, imagen: imagen, link: link }, 'PUT');
         const body = await resp.json();
 
         if (body.ok) {

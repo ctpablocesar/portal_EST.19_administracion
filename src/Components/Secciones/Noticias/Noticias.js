@@ -21,14 +21,14 @@ export const Noticias = () => {
 
     const [vacia, setVacia] = useState(true);
 
-    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '' });
+    const [value, handleInputChange, reset, setValue] = useForm({ titulo: '', descripcion: '', link: '' });
 
     useEffect(() => {
         dispatch(startLoadingNoticias())
     }, [saving])
 
     useEffect(() => {
-        active.imagen && setValue({ titulo: active.titulo, descripcion: active.descripcion })
+        active.imagen && setValue({ titulo: active.titulo, descripcion: active.descripcion, link: active.link })
     }, [active])
 
     const handleOpen = () => {
@@ -59,15 +59,16 @@ export const Noticias = () => {
         e.preventDefault()
         const titulo = e.target.titulo.value;
         const desc = e.target.descripcion.value;
+        const link = e.target.link.value;
         if (active.id) {
             setTimeout(() => {
-                dispatch(startUplaodNoticia(titulo,desc))
+                dispatch(startUplaodNoticia(titulo, desc, link))
                 handleClose()
                 setTitulo('')
             }, 2000);
         } else {
             setTimeout(() => {
-                dispatch(startSaveNoticia(titulo,desc))
+                dispatch(startSaveNoticia(titulo, desc, link))
                 handleClose()
                 setTitulo('')
             }, 2000);
@@ -161,6 +162,20 @@ export const Noticias = () => {
                                             </div>
                                         </div>
 
+                                        <div className="form-group row">
+                                            <label className="col-sm-2 col-form-label">Link: </label>
+                                            <div className="col-sm-9">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="link"
+                                                    name='link'
+                                                    value={value.link}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                        </div>
+
                                         <div className="form-group">
                                             <label >Imagen de la noticia:&nbsp;</label>
                                             {
@@ -189,7 +204,6 @@ export const Noticias = () => {
                                                     ?
                                                     < button type="submit" className={`btn btn-success`}>Actualizar</button>
                                                     :
-
                                                     <button type="submit" className={`btn btn-success ${vacia && 'btn-disabled'}`}>Guardar</button>
                                             }
                                         </div>

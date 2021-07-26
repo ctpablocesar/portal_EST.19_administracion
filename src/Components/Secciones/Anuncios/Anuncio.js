@@ -6,7 +6,7 @@ import 'moment/locale/es';
 
 export const Anuncio = ({ handleChangeStatus, handleEdit, handleDelete, anuncio }) => {
 
-    const { titulo, descripcion, imagen, fecha, id, status } = anuncio;
+    const { titulo, descripcion, imagen, fecha, id, status, link } = anuncio;
 
     return (
         <div className="card col-sm-5 tarjeta-noticias m-3">
@@ -18,6 +18,7 @@ export const Anuncio = ({ handleChangeStatus, handleEdit, handleDelete, anuncio 
                     <div className="card-body">
                         <h5 className="card-title"><strong>{titulo}</strong></h5>
                         <p className="card-text">{descripcion}</p>
+                        <a href={link} target="_blank">{link}</a>
                         <p className="card-text text-right"><small className="text-muted"> <Moment fromNow>{fecha}</Moment></small></p>
                     </div>
                 </div>
@@ -27,8 +28,8 @@ export const Anuncio = ({ handleChangeStatus, handleEdit, handleDelete, anuncio 
                     <span>Status </span>
                     <Switch
                         checked={status}
-                        onChange={() => handleChangeStatus(id,status)}
-                        onClick={() => handleChangeStatus(id,status)}
+                        onChange={() => handleChangeStatus(id, status)}
+                        onClick={() => handleChangeStatus(id, status)}
                     />
                 </div>
                 <div className="centrar diveditar" onClick={() => handleEdit(anuncio)}>
